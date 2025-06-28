@@ -1,0 +1,16 @@
+.section .colors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.section .colors div {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background-color: red;
+  margin-top: 8px;
+  cursor: pointer;
+}

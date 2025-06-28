@@ -1,0 +1,26 @@
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.features .feature_container {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.features .feature_container div {
+  max-width: 300px;
+}
+
+.features .feature_container:nth-child(odd) {
+  align-items: flex-end;
+}
+
+.features .feature_container h1 {
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}

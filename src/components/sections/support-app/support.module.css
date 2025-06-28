@@ -1,0 +1,19 @@
+.images_container {
+  margin-top: 200px;
+  position: relative;
+}
+
+.mockup_left {
+  position: relative;
+  bottom: -100px;
+  left: -10%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.mockup_right {
+  position: absolute;
+  right: -15%;
+  top: -15%;
+  object-fit: cover;
+}
