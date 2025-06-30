@@ -7,10 +7,10 @@ import ResizeIcon from '@/components/icons/resize';
 
 export const SpecSection = () => {
   return (
-    <section className="section">
+    <section className="section" id='sec-5'>
       <h1>Built for sustainability</h1>
       <p>Tiny tech. Big endurance.</p>
-      <div className="canvas"> </div>
+      {/* <div className="canvas"> </div> */}
       <div className={Style.spec_container}>
         <Card>
           <SpeedometerIcon />

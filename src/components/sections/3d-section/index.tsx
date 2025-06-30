@@ -3,62 +3,23 @@
 "use client"
 
 import { useGLTF } from '@react-three/drei';
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useRef } from "react";
-import * as THREE from 'three';
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { RingModel } from '@/components/fragments/RingModel';
 
 export const Canvas3D = () => {
   return (
     <div id="canvas-container" style={{ width: '100vw', height: '100vh', position: 'fixed', top: 0, left: 0 }}>
       <Canvas>
-        {/* <ambientLight intensity={0.2} /> */}
         <directionalLight />
-        {/* <OrbitControls /> */}
-        <Box />
-        {/* <Ico /> */}
+        <Suspense fallback={null}>
+          <RingModel />
+        </Suspense>
       </Canvas>
     </div>
   )
 }
 
-const Box = () => {
-  const meshRef = useRef<THREE.Mesh>(null!);
-
-  useFrame((_, delta) => {
-    if (!meshRef) return;
-
-    meshRef.current.rotation.x += delta
-    meshRef.current.rotation.y += delta
-  })
 
 
-  const { nodes, materials } = useGLTF('/models/black-ring.glb');
-
-  return (
-    /* @ts-ignore */
-    <group ref={meshRef} isGroup>
-      <mesh
-        /* @ts-ignore */
-        geometry={nodes?.Ring.geometry}
-        scale={2}
-        material={materials["darkBlue"]}
-        position={[0, 0, 0]}>
-        {/* <boxGeometry /> */}
-      </mesh>
-      <mesh
-        /* @ts-ignore */
-        geometry={nodes?.Ring2.geometry}
-        scale={2}
-        material={materials["Black"]}
-        position={[0, .001, 0]}>
-      </mesh>
-      <mesh
-        /* @ts-ignore */
-        geometry={nodes?.Ring001.geometry}
-        scale={2}
-        material={materials["darkBlue"]}
-        position={[0, .002, 0]}>
-      </mesh>
-    </group>
-  )
-}
+useGLTF.preload('/models/black-ring.glb');
