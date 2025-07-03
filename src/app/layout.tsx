@@ -1,8 +1,7 @@
+import { Navbar } from "@/components/fragments/navbar";
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components/fragments/navbar";
-import { Footer } from "@/components/fragments/footer";
-import LenisProvider from "@/providers/lenis";
+// import LenisProvider from "@/providers/lenis";
 
 
 
@@ -19,14 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
-        <LenisProvider>
-          <div className="container">
-            <Navbar />
-            {children}
-          </div>
-          <Footer />
-
-        </LenisProvider>
+        {/* <LenisProvider>
+        </LenisProvider> */}
+        <div className="container">
+          <Navbar />
+        </div>
+        {children}
       </body>
     </html>
   );

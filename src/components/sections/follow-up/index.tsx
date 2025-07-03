@@ -1,9 +1,13 @@
+import { Canvas3D } from "@/components/sections/3d-section";
+
 export const FollowUpSection = () => {
   return (
-    <section className="section">
-      <h1>You’ve seen the vision. Now be part of it.</h1>
+    <div className="follow_up">
+      <h1 className="title">You’ve seen the vision. Now be part of it.</h1>
       <p>Zen O is coming — and this is your chance to lead the wearable revolution.</p>
-      <div className="canvas"> </div>
-    </section>
+      <div className="placeholder">
+        <Canvas3D isRotating />
+      </div>
+    </div>
   )
 }

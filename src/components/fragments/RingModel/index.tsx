@@ -19,7 +19,9 @@ type GLTFResult = GLTF & {
 };
 
 
-export const RingModel = () => {
+export const RingModel: React.FC<{
+  isRotating: boolean;
+}> = ({ isRotating = true }) => {
   const meshRef = useRef<THREE.Group>(null!);
   const scrollYRef = useRef(0);
   const lastScrollTime = useRef(0)
@@ -60,8 +62,7 @@ export const RingModel = () => {
   }, [])
 
   useFrame((_, delta) => {
-    if (!meshRef.current) return;
-
+    if (!meshRef.current || !isRotating) return;
     const now = Date.now();
     const timeSinceScroll = now - lastScrollTime.current;
     if (timeSinceScroll < 100) {
@@ -69,7 +70,6 @@ export const RingModel = () => {
     } else {
       meshRef.current.rotation.x += delta * 0.3;
     }
-
   })
 
 
@@ -80,21 +80,21 @@ export const RingModel = () => {
       <mesh
         ref={RingBottomRef}
         geometry={nodes?.RingBottom.geometry}
-        scale={2}
+        scale={5}
         material={materials["darkBlue"]}
         position={[0, 0, 0]}>
       </mesh>
       <mesh
         ref={glowRef}
         geometry={nodes?.glow.geometry}
-        scale={2}
+        scale={5}
         material={materials["Black"]}
         position={[0, 0, 0]}>
       </mesh>
       <mesh
         ref={RingTopRef}
         geometry={nodes?.RingTop.geometry}
-        scale={2}
+        scale={5}
         material={materials["darkBlue"]}
         position={[0, 0, 0]}>
       </mesh>

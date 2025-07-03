@@ -7,16 +7,16 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { RingModel } from '@/components/fragments/RingModel';
 
-export const Canvas3D = () => {
+export const Canvas3D: React.FC<{
+  isRotating: boolean;
+}> = ({ isRotating }) => {
   return (
-    <div id="canvas-container" style={{ width: '100vw', height: '100vh', position: 'fixed', top: 0, left: 0 }}>
-      <Canvas>
-        <directionalLight />
-        <Suspense fallback={null}>
-          <RingModel />
-        </Suspense>
-      </Canvas>
-    </div>
+    <Canvas>
+      <directionalLight />
+      <Suspense fallback={null}>
+        <RingModel isRotating={isRotating} />
+      </Suspense>
+    </Canvas>
   )
 }
 
