@@ -1,10 +1,43 @@
+"use client"
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+
 
 export const SpecSection = () => {
+  useGSAP(() => {
+    gsap.to(".spec .title", {
+      scrollTrigger: {
+        trigger: ".spec .title",
+        start: "start, 70%",
+      },
+      y: 0,
+      opacity: 1,
+    })
+    gsap.to(".spec .subtitle", {
+      scrollTrigger: {
+        trigger: ".spec .title",
+        start: "start, 70%",
+      },
+      y: 0,
+      opacity: 1,
+      delay: 0.1
+    })
+    gsap.to(".spec .grid", {
+      scrollTrigger: {
+        trigger: ".spec .grid",
+        start: "start, 70%",
+      },
+      y: 0,
+      opacity: 1,
+      delay: 0.1,
+      stagger: 0.2
+    })
+  })
   return (
     <div className='spec'>
       <div>
         <h1 className='title'>Built for sustainability</h1>
-        <p>Tiny tech. Big endurance.</p>
+        <p className='subtitle'>Tiny tech. Big endurance.</p>
       </div>
       <div className="grid">
         <div className="grid-content content-1">

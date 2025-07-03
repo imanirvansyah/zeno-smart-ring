@@ -38,17 +38,38 @@ li {
   letter-spacing: 2px;
 }
 
+/* NAVBAR STYLES  */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: -30px;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+}
+
+.navbar div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+}
+
+.navbar-logo {
+  font-weight: 500;
+}
+
+/* NAVBAR STYLES END  */
+
 .section {
   min-height: 100vh;
   width: 100vw;
 }
 
-/* The wrapper contains the scroll and sticky context */
 .wrapper {
   position: relative;
 }
 
-/* Sticky container is as tall as sections 1–3 combined */
 .sticky-container {
   position: sticky;
   top: 0;
@@ -56,7 +77,6 @@ li {
   z-index: 0;
 }
 
-/* This is the box that stays centered */
 .absolute-container {
   position: absolute;
   top: 0;
@@ -103,7 +123,7 @@ li {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -113,6 +133,8 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
 .feature_container div {
@@ -217,4 +239,85 @@ li {
   position: absolute;
   opacity: 0.3;
   /* width: 100vh; */
+}
+
+.images_container {
+  margin-top: 100px;
+  position: relative;
+}
+
+.mockup_left {
+  position: relative;
+  bottom: -100px;
+  left: -10%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.mockup_right {
+  position: absolute;
+  right: -15%;
+  top: -15%;
+  object-fit: cover;
+}
+
+
+#hero-section .title {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#hero-section .subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  max-width: none;
+}
+
+#follow-up .title {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#follow-up .subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  max-width: none;
+}
+
+#follow-up .placeholder {
+  opacity: 0;
+  transform: translateY(20px);
+  max-width: none;
+}
+
+.support .title {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.support .subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.support .images_container {
+  opacity: 0;
+  transform: translateY(20px);
+  max-width: none;
+}
+
+
+.spec .title {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.spec .subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  max-width: none;
+}
+
+.spec .grid {
+  opacity: 0;
 }

@@ -1,11 +1,24 @@
-import Styles from './navbar.module.css';
+"use client"
+
 import { Button } from '@/components/ui/button';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 export const Navbar = () => {
+  useGSAP(() => {
+    const animate = () => {
+      gsap.to(".navbar", {
+        top: 0,
+        opacity: 1,
+      })
+    }
+    animate()
+  }, {})
+
   return (
-    <nav className={Styles.navbar}>
+    <nav className="navbar">
       <div className="container">
-        <span className={Styles.navbar_logo}>Zen o</span>
+        <span className="navbar-logo">Zen o</span>
         <Button>Join the Launch List</Button>
       </div>
     </nav>
